@@ -9,6 +9,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -34,15 +35,16 @@ public class MainActivity extends Activity {
 	}
 
     public void createGraph() {
+    	int[] colors = new int[10000];
+    	for (int i = 0; i<10000; i++){
+    		colors[i] = Color.RED;
+    	}
         bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
         x = 10;
         y = 10;
-        onDraw(canvas);
-    }
-
-    protected void onDraw(Canvas canvas) {
-        canvas.drawBitmap(bitmap, x, y, null);
+        canvas.drawColor(Color.WHITE);
+        canvas.drawRGB(255, 0, 0);
     }
 
     public int getBitmapWidth() {
