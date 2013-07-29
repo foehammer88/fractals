@@ -13,11 +13,16 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <SurfaceView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/surfaceView"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/FractalView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/z2_mandelbrot_bone" />
+
+    <Button
+        android:id="@+id/buttonChangeColors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonChangeColors" />
 
 </RelativeLayout>

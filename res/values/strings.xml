@@ -3,6 +3,7 @@
 
     <string name="app_name">Fractals</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Now your thinking with fractals.</string>
+    <string name="hello_world">\n\n\n\n\n Check out my baller fractals.</string>
+    <string name="buttonChangeColors">Change Colors</string>
 
 </resources>
