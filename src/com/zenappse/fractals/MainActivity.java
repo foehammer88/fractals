@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     Bitmap bitmap;
     Button button;
     ImageView image;
+    ColorMap colorMap1 = new ColorMap(1,64);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,11 +56,14 @@ public class MainActivity extends Activity {
                 Random rand = new Random();
                 double creal = .8*rand.nextDouble()-.4;
                 double cimag = .8*rand.nextDouble()-.4;
+                //double creal = -.8;
+                //double cimag = .156;
 
                 // Initiate colors, cutoff, various extras and begin our loop
                 int[] colors = new int[xpix*ypix];
-                double cutoff = 500000;
-                int maxiters = 255;
+                int pix1, pix2, pix3;
+                double cutoff = 100000000;
+                int maxiters = 63;
                 int pixel_count = 0;
                 double x0, y0, zreal, zimag, ztmp, curnorm;
                 for (int a = 1; a<=xpix; a++){
@@ -70,7 +74,7 @@ public class MainActivity extends Activity {
                         zimag = y0;
                         curnorm = Math.sqrt(((zreal*zreal)+(zimag*zimag)));
 
-                        int curcount = 1;
+                        int curcount = 0;
                         while( (curcount < maxiters) && (curnorm < cutoff) ){
                             ztmp = zreal;
                             zreal = zreal*zreal - zimag*zimag + creal;
@@ -79,7 +83,10 @@ public class MainActivity extends Activity {
                             curnorm = Math.sqrt(((zreal*zreal)+(zimag*zimag)));
                             curcount++;
                         }
-                        colors[pixel_count] = Color.rgb(curcount, 0, 0);
+                        pix1 = colorMap1.getColor(curcount,0);
+                        pix2 = colorMap1.getColor(curcount,1);
+                        pix3 = colorMap1.getColor(curcount,2);
+                        colors[pixel_count] = Color.rgb(pix1, pix2, pix3);
                         pixel_count++;
                     }
                 }
