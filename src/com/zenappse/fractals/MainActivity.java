@@ -20,9 +20,9 @@ import java.lang.Math.*;
 public class MainActivity extends Activity {
 
     Bitmap bitmap;
-    Button button;
+    Button button1, button2;
     ImageView image;
-    ColorMap colorMap1 = new ColorMap(1,64);
+    ColorMap colorMap1 = new ColorMap();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,17 @@ public class MainActivity extends Activity {
 
         image = (ImageView) findViewById(R.id.FractalView1);
 
-        button = (Button) findViewById(R.id.buttonChangeParam);
-        button.setOnClickListener(new OnClickListener() {
+        button2 = (Button) findViewById(R.id.buttonChangeColorMap);
+        button2.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                colorMap1.setNewColorMap();
+            }
+        });
+
+        button1 = (Button) findViewById(R.id.buttonChangeParam);
+        button1.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -49,8 +58,8 @@ public class MainActivity extends Activity {
                 double ymin = -1.5;
                 double ymax = 1.5;
 
-                int xpix = 200;
-                int ypix = 200;
+                int xpix = 250;
+                int ypix = 250;
 
                 // Create a random number generator and a value for parameter 'c'
                 Random rand = new Random();
@@ -62,7 +71,7 @@ public class MainActivity extends Activity {
                 // Initiate colors, cutoff, various extras and begin our loop
                 int[] colors = new int[xpix*ypix];
                 int pix1, pix2, pix3;
-                double cutoff = 100000000;
+                double cutoff = 1000000;
                 int maxiters = 63;
                 int pixel_count = 0;
                 double x0, y0, zreal, zimag, ztmp, curnorm;

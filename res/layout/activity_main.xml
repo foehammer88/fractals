@@ -29,4 +29,13 @@
         android:layout_alignBottom="@+id/FractalView1"
         android:layout_alignLeft="@+id/FractalView1"/>
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/buttonChangeColorMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/changeColors"
+        android:layout_above="@+id/currentParam"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
