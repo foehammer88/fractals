@@ -3,8 +3,15 @@
 
     <string name="app_name">Fractals</string>
     <string name="action_settings">Settings</string>
-    <string name="buttonChangeParam">Change Parameter \'c\'</string>
+
+    <string name="buttonRandomParam">Random \'c\'</string>
+    <string name="buttonPickParam">Good \'c\'</string>
+
+    <string name="buttonBad">Discard</string>
+    <string name="buttonChangeColorMap">Change Colors</string>
+    <string name="buttonGood">Keep</string>
+
     <string name="currentParam">Current \'c\' value: c = 0 + 0*i</string>
-    <string name="changeColors">Change Colors</string>
+
 
 </resources>

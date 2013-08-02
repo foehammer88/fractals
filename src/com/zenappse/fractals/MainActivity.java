@@ -20,9 +20,10 @@ import java.lang.Math.*;
 public class MainActivity extends Activity {
 
     Bitmap bitmap;
-    Button button1, button2;
+    Button buttonRandom, buttonPick, buttonBad, buttonColors, buttonGood;
     ImageView image;
     ColorMap colorMap1 = new ColorMap();
+    Fractal fractal1 = new Fractal();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,17 +38,14 @@ public class MainActivity extends Activity {
 
         image = (ImageView) findViewById(R.id.FractalView1);
 
-        button2 = (Button) findViewById(R.id.buttonChangeColorMap);
-        button2.setOnClickListener(new OnClickListener() {
+      /* The majority of this first button needs to be moved to a Fractal.java class or some other
+         equivalent, because this will get ridiculously messy otherwise. I somehow want that fractal
+         class to be able to generate the fractals in full on its own, and just pass to here what
+         needs to be drawn, to keep this file more minimum, higher level so to speak. I think I can
+         make it so that colors can be redrawn without losing the current fractal if done this way  */
 
-            @Override
-            public void onClick(View arg0) {
-                colorMap1.setNewColorMap();
-            }
-        });
-
-        button1 = (Button) findViewById(R.id.buttonChangeParam);
-        button1.setOnClickListener(new OnClickListener() {
+        buttonRandom = (Button) findViewById(R.id.buttonRandomParam);
+        buttonRandom.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -110,6 +108,50 @@ public class MainActivity extends Activity {
             }
 
         });
+
+        buttonPick = (Button) findViewById(R.id.buttonPickParam);
+        buttonPick.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // Redraw a new fractal but choose the parameter from the ongoing list
+            }
+        });
+
+        buttonBad = (Button) findViewById(R.id.buttonBad);
+        buttonBad.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // Take this c-value and add it to an ongoing list of bad parameters
+                // These parameters would never be chosen by the random or good 'c' buttons
+                // More coming soon ...
+            }
+        });
+
+        buttonColors = (Button) findViewById(R.id.buttonChangeColorMap);
+        buttonColors.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                colorMap1.setNextColorMap();
+
+                // Redraw fractal here, right after the new color is chosen
+                // Make it so it opens a menu that shows the color maps and you choose?
+            }
+        });
+
+        buttonGood = (Button) findViewById(R.id.buttonGood);
+        buttonGood.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // Take this c-value and add it to an ongoing list of good parameters
+                // These parameters would be chosen from at random by the good 'c' button
+                // More coming soon ...
+            }
+        });
+
 
     }
 

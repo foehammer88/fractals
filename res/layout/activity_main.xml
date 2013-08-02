@@ -15,10 +15,44 @@
         android:src="@drawable/z2_mandelbrot_bone" />
 
     <Button
-        android:id="@+id/buttonChangeParam"
+        android:id="@+id/buttonRandomParam"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonChangeParam" />
+        android:text="@string/buttonRandomParam"
+        android:layout_alignTop="@+id/FractalView1"
+        android:layout_alignLeft="@+id/FractalView1"/>
+
+    <Button
+        android:id="@+id/buttonPickParam"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonPickParam"
+        android:layout_below="@+id/buttonRandomParam"
+        android:layout_alignRight="@+id/buttonGood"/>
+
+    <Button
+        android:id="@+id/buttonBad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonBad"
+        android:layout_alignBottom="@+id/buttonChangeColorMap"
+        android:layout_toLeftOf="@+id/buttonChangeColorMap"/>
+
+    <Button
+        android:id="@+id/buttonChangeColorMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonChangeColorMap"
+        android:layout_above="@+id/currentParam"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/buttonGood"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonGood"
+        android:layout_alignBottom="@+id/buttonChangeColorMap"
+        android:layout_toRightOf="@+id/buttonChangeColorMap"/>
 
     <TextView
         android:id="@+id/currentParam"
@@ -28,14 +62,5 @@
         android:text="@string/currentParam"
         android:layout_alignBottom="@+id/FractalView1"
         android:layout_alignLeft="@+id/FractalView1"/>
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:id="@+id/buttonChangeColorMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/changeColors"
-        android:layout_above="@+id/currentParam"
-        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
