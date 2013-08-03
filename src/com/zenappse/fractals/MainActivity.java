@@ -3,6 +3,11 @@ package com.zenappse.fractals;
 /**
  * Created by Mark on 7/29/13.
  */
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
