@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
     Button buttonRandom, buttonPick, buttonBad, buttonColors, buttonGood;
     ImageView image;
     ColorMap colorMap1 = new ColorMap();
-    Fractal fractal1 = new Fractal();
+    Fractal fractal1 = new Fractal(colorMap1);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

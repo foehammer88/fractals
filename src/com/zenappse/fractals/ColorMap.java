@@ -308,7 +308,7 @@ public class ColorMap {
                 {255,0,0},{0,128,0},{0,0,255},{64,64,64},{191,191,0},{191,0,191},{0,191,191},
                 {255,0,0},{0,128,0},{0,0,255}};
 
-        currentMap = cmap_bone;
+        setColorMap(6);
     }
 
     public int getColor(int val, int index){
@@ -319,6 +319,34 @@ public class ColorMap {
         count = count + 1;
         int choice = count % numberOfMaps;
 
+        if(choice==0){ currentMap = cmap_lines; }
+        else if(choice==1) { currentMap = cmap_pink_inv; }
+        else if(choice==2) { currentMap = cmap_pink; }
+        else if(choice==3) { currentMap = cmap_copper_inv; }
+        else if(choice==4) { currentMap = cmap_copper; }
+        else if(choice==5) { currentMap = cmap_bone_inv; }
+        else if(choice==6) { currentMap = cmap_bone; }
+        else if(choice==7) { currentMap = cmap_gray_inv; }
+        else if(choice==8) { currentMap = cmap_gray; }
+        else if(choice==9) { currentMap = cmap_winter_inv; }
+        else if(choice==10) { currentMap = cmap_winter; }
+        else if(choice==11) { currentMap = cmap_autumn_inv; }
+        else if(choice==12) { currentMap = cmap_autumn; }
+        else if(choice==13) { currentMap = cmap_summer_inv; }
+        else if(choice==14) { currentMap = cmap_summer; }
+        else if(choice==15) { currentMap = cmap_spring_inv; }
+        else if(choice==16) { currentMap = cmap_spring; }
+        else if(choice==17) { currentMap = cmap_cool_inv; }
+        else if(choice==18) { currentMap = cmap_cool; }
+        else if(choice==19) { currentMap = cmap_hot_inv; }
+        else if(choice==20) { currentMap = cmap_hot; }
+        else if(choice==21) { currentMap = cmap_hsv_inv; }
+        else if(choice==22) { currentMap = cmap_hsv; }
+        else if(choice==23) { currentMap = cmap_jet_inv; }
+        else if(choice==24) { currentMap = cmap_jet; }
+    }
+
+    public void setColorMap(int choice){
         if(choice==0){ currentMap = cmap_lines; }
         else if(choice==1) { currentMap = cmap_pink_inv; }
         else if(choice==2) { currentMap = cmap_pink; }
